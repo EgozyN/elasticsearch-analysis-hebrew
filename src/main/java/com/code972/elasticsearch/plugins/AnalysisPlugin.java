@@ -1,11 +1,9 @@
 package com.code972.elasticsearch.plugins;
 
-import com.code972.elasticsearch.rest.action.RestHebrewAnalyzerCheckWordAction;
 import org.elasticsearch.common.inject.Module;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.index.analysis.AnalysisModule;
 import org.elasticsearch.plugins.AbstractPlugin;
-import org.elasticsearch.rest.RestModule;
 
 /**
  * Created with IntelliJ IDEA.
@@ -51,8 +49,6 @@ public class AnalysisPlugin extends AbstractPlugin {
     public void processModule(Module module) {
         if (module instanceof AnalysisModule) {
             ((AnalysisModule) module).addProcessor(new HebrewAnalysisBinderProcessor());
-        } else if (module instanceof RestModule) {
-            ((RestModule) module).addRestAction(RestHebrewAnalyzerCheckWordAction.class);
         }
     }
 }
