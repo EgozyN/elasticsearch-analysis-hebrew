@@ -16,7 +16,12 @@ You will need hebrew dictionary files. The open-sourced hspell files can be down
 ```
     hebrew.dict.path: /PATH/TO/HSPELL/FOLDER
 ```
+
+**NOTE:** as of elasticsearch 2.0, you have to place the dictionary files in a folder elasticsearch can easily access. A good place would be to stick it in the plugin folder: elasticsearch/plugins/elasticsearch-analysis-hebrew/hspell-data-files/
+
+
 The easiest way to make sure the plugin is installed correctly is to request /_hebrew/check-word/בדיקה on your server (for example: browse to http://localhost:9200/_hebrew/check-word/בדיקה). If it loads, it means everything is set up and you are good to go.
+
 
 ## Commercial
 
